@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "node-hello.TatsatPatel" . }}
+  name: {{ include "node-hello.fullname" . }}
   labels:
-    app: {{ include "node-hello.Tatsat" . }}
+    app: {{ include "node-hello.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "node-hello.Tatsat" . }}
+      app: {{ include "node-hello.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "node-hello.Tatsat" . }}
+        app: {{ include "node-hello.name" . }}
     spec:
       containers:
       - name: {{ .Chart.Name }}
