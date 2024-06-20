@@ -1,0 +1,8 @@
+image:
+  repository: tatsatpatel1210@gmail.com/node-hello
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 3000
